@@ -461,6 +461,26 @@ class Character extends FlxSprite
 				updateHitbox();
 
 				antialiasing = false;
+			case 'dorklysonic':
+				frames = Paths.getSparrowAtlas('characters/dorkly_assets');
+				animation.addByPrefix('idle', 'dorkly idle', 24, false);
+				animation.addByPrefix('singUP', 'dorkly up', 24, false);
+				animation.addByPrefix('singLEFT', 'dorkly left', 24, false);
+				animation.addByPrefix('singRIGHT', 'dorkly right', 24, false);
+				animation.addByPrefix('singDOWN', 'dorkly down', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", 16, 45);
+				addOffset("singRIGHT", 29, -6);
+				addOffset("singLEFT", 67, -27);
+				addOffset("singDOWN", 55, -16);
+
+				playAnim('idle');
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				antialiasing = false;
 			case 'senpai-angry':
 				frames = Paths.getSparrowAtlas('characters/senpai');
 				animation.addByPrefix('idle', 'Angry Senpai Idle', 24, false);
